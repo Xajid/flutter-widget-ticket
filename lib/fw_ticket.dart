@@ -5,7 +5,7 @@ import 'package:clip_shadow/clip_shadow.dart';
 
 class Ticket extends StatelessWidget {
   const Ticket({
-    Key key,
+    Key? key,
     this.innerRadius = const BorderRadius.all(Radius.circular(0.0)),
     this.outerRadius = const BorderRadius.all(Radius.circular(0.0)),
     this.child,
@@ -23,14 +23,14 @@ class Ticket extends StatelessWidget {
   final bool dashedBottom;
 
   /// The [child] contained by the ticket widget.
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
     return ClipShadow(
       clipper: _TicketClipper(innerRadius, outerRadius),
       boxShadow: boxShadow,
-      child: child,
+      child: child!,
     );
   }
 }
